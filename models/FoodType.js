@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class FoodType extends Model {}
 
-Gallery.init(
+FoodType.init(
   {
     id: {
       type: DataTypes.INTEGER,
