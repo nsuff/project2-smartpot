@@ -23,7 +23,7 @@ UserPotluck.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'post',
+                model: 'potluck',
                 key: 'id'
             }
         }
@@ -33,7 +33,7 @@ UserPotluck.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'vote'
+        modelName: 'userpotluck'
     }
 );
 
