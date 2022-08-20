@@ -10,6 +10,10 @@ Food.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+      references: {
+        model: 'potluck',
+        key: 'id',
+      },
     },
     created_at: {
       type: DataTypes.DATE,
@@ -30,16 +34,10 @@ Food.init(
     type_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      include: [
-        {
-        model: 'potluck',
-        key: 'id',
-        },
-        {
+      references: {
         model: 'foodtype',
         key: 'id',
-        },
-      ],
+      },
     },
     name: {
       type: DataTypes.STRING,

@@ -14,10 +14,18 @@ Post.init(
     content: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: 'potluck',
+        key: 'id',
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
     created_at: {
       type: DataTypes.DATE,
