@@ -22,7 +22,7 @@ Here's a link to the recorded video: [Smart pot](https://watch.screencastify.com
 
 * Use Node.js and Express.js to create a RESTful API.
 
-* Use Handlebars.js as the templating engine.
+* Use Handlebars.js as the template's engine.
 
 * Use MySQL and the Sequelize ORM for the database.
 
