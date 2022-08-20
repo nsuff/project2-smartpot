@@ -21,15 +21,25 @@ Food.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'placeholder',
-        key: 'placeholder',
-      },
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
     type_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      include: [
+        {
+        model: 'potluck',
+        key: 'id',
+        },
+        {
+        model: 'foodtype',
+        key: 'id',
+        },
+      ],
     },
     name: {
       type: DataTypes.STRING,
