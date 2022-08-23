@@ -11,28 +11,21 @@ Potluck.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    theme: {
+    name: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    artist: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    schedule_date: {
-      type: DataTypes.DATE,
       allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
+    schedule: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    admin_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'gallery',
-        key: 'id',
-      },
+      allowNull: false,
     },
   },
   {
