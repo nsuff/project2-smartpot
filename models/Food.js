@@ -10,6 +10,10 @@ Food.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    potluck_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'potluck',
         key: 'id',

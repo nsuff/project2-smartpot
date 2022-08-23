@@ -15,43 +15,45 @@ Post.belongsTo(User, {
 });
 
 Potluck.hasMany(Post, {
-  foreignKey: 'content'
+  foreignKey: 'potluck_id'
 });
 
 Post.belongsTo(Potluck, {
   foreignKey: 'potluck_id'
 });
 
-User.belongsToMany(Post, {
+User.belongsToMany(Potluck, {
   through: UserPotluck,
   as: 'potluck_theme',
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  otherKey: 'potluck_id'
 });
 
 Potluck.belongsToMany(User, {
   through: UserPotluck,
   as: 'potluck_theme',
-  foreignKey: 'potluck_id'
+  foreignKey: 'potluck_id',
+  otherKey: 'user_id'
 });
 
-UserPotluck.belongsTo(User, {
-  foreignKey: 'user_id'
-});
+// UserPotluck.belongsTo(User, {
+//   foreignKey: 'user_id'
+// });
 
-UserPotluck.belongsTo(Potluck, {
-  foreignKey: 'potluck_id'
-});
+// UserPotluck.belongsTo(Potluck, {
+//   foreignKey: 'potluck_id'
+// });
 
-User.hasMany(UserPotluck, {
-  foreignKey: 'user_id'
-});
+// User.hasMany(UserPotluck, {
+//   foreignKey: 'user_id'
+// });
 
-Potluck.hasMany(UserPotluck, {
-  foreignKey: 'potluck_id'
-});
+// Potluck.hasMany(UserPotluck, {
+//   foreignKey: 'potluck_id'
+// });
 
 User.hasMany(Food, {
-  foreignKey: 'food_id'
+  foreignKey: 'user_id'
 });
 
 Food.belongsTo(User, {
@@ -59,7 +61,7 @@ Food.belongsTo(User, {
 });
 
 Potluck.hasMany(Food, {
-  foreignKey: 'type_id'
+  foreignKey: 'potluck_id'
 });
 
 Food.belongsTo(Potluck, {
@@ -71,7 +73,7 @@ FoodType.hasMany(Food, {
 });
 
 Food.belongsTo(FoodType, {
-  foreignKey: 'user_id'
+  foreignKey: 'type_id'
 });
 
 
