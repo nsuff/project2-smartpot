@@ -4,6 +4,7 @@ const Potluck = require('./Potluck');
 const Food = require('./Food');
 const FoodType = require('./FoodType');
 const Post = require('./Post');
+const Comment = require('./Comment');
 
 // create associations
 User.hasMany(Post, {
@@ -76,5 +77,24 @@ Food.belongsTo(FoodType, {
   foreignKey: 'type_id'
 });
 
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
 
-module.exports = { User, UserPotluck, Potluck, Post, FoodType, Food };
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id',
+  onDelete: 'SET NULL'
+});
+
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
+
+Post.hasMany(Comment, {
+  foreignKey: 'post_id'
+});
+
+
+module.exports = { User, UserPotluck, Potluck, Post, FoodType, Food, Comment };
