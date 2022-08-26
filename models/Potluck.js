@@ -19,14 +19,18 @@ Potluck.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    schedule: {
+    startDateTime: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    admin_id: {
-      type: DataTypes.INTEGER,
+    endDateTime: {
+      type: DataTypes.DATE,
       allowNull: false,
-    },
+    }
+    // admin_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    // },
   },
   {
     sequelize,

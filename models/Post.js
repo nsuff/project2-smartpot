@@ -14,6 +14,10 @@ Post.init(
     content: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    potluck_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'potluck',
         key: 'id',
