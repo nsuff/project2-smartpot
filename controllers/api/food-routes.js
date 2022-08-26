@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Food, Post, User } = require('../../models');
+const { Food, Post, User, Potluck } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
     console.log('======================');
-    Food.findAll({
+    Food.findAll(req.body, {
         attributes: [
             'id',
             'potluck_id',
@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Food.findOne({
+    Food.findOne(req.body, {
         where: {
             id: req.params.id
         },
@@ -80,11 +80,11 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // expects {name: 'Fried chicken!', type_id: 'main dish', user_id: 1}
+    // expects {name: 'Fried chicken!', type_id: 'main course dish', user_id: 1}
     if (req.session) {
-        Food.create({
+        Food.create(req.body, {
             name: req.body.name,
-            type_id: req.body.type_id,
+            description: req.body.description,
             user_id: req.session.user_id
         })
             .then(dbFoodData => res.json(dbFoodData))
@@ -108,7 +108,7 @@ router.post('/', (req, res) => {
 // });
 
 router.put('/:id', (req, res) => {
-    Post.update(
+    Food.update(req.body,
         {
             where: {
                 id: req.params.id
@@ -130,7 +130,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     console.log('id', req.params.id);
-    Food.destroy({
+    Food.destroy(req.body, {
         where: {
             id: req.params.id
         }

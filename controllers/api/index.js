@@ -12,7 +12,7 @@ router.use('/users', userRoutes);
 router.use('/potluck', potluckRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
-router.use('/food', foodRoutes);
+router.use('/foods', foodRoutes);
 router.use('/foodType', foodTypeRoutes);
 
 module.exports = router;
