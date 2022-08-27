@@ -12,37 +12,19 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    FoodType.findOne(req.body, {
+    console.log(req.params);
+    FoodType.findOne({    
         where: {
             id: req.params.id
         },
-        attributes: [
-            'id',
-            'name',
-            'description'
-            [sequelize.literal('(SELECT (*) FROM foodtype WHERE foodtype.id = foodtype.potluck_id)')]
-        ],
-        include: [
-            {
-                model: Potluck,
-                attributes: ['id', 'name', 'description', 'schedule_date'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
     })
-        .then(dbFoodData => {
-            if (!dbFoodData) {
+        .then(dbFoodTypeData => {
+            console.log(dbFoodTypeData);
+            if (!dbFoodTypeData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
             }
-            res.json(dbFoodData);
+            res.json(dbFoodTypeData);
         })
         .catch(err => {
             console.log(err);
@@ -51,10 +33,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
-  if (req.session) {req.body,
-    FoodType.create({
-      id: req.body.id,
+  // expects => {name: Midnight Snack, description: After dessert and before bedtime}
+  if (req.session) {
+    FoodType.create(req.body, {
+      // id: req.body.id,
       name: req.session.name,
       description: req.body.description
     })
@@ -63,7 +45,7 @@ router.post('/', (req, res) => {
         console.log(err);
         res.status(400).json(err);
       });
-  }
+    }
 });
 
 router.put('/:id', (req, res) => {
