@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { FoodType, Potluck, User } = require('../../models');
+const { FoodType } = require('../../models');
 
 router.get('/', (req, res) => {
     FoodType.findAll()
@@ -21,7 +20,7 @@ router.get('/:id', (req, res) => {
         .then(dbFoodTypeData => {
             console.log(dbFoodTypeData);
             if (!dbFoodTypeData) {
-                res.status(404).json({ message: 'No post found with this id' });
+                res.status(404).json({ message: 'No food type found with this id' });
                 return;
             }
             res.json(dbFoodTypeData);
@@ -78,7 +77,7 @@ router.delete('/:id', (req, res) => {
     })
       .then(dbFoodTypeData => {
         if (!dbFoodTypeData) {
-          res.status(404).json({ message: 'No comment found with this id!' });
+          res.status(404).json({ message: 'No food type found with this id!' });
           return;
         }
         res.json(dbFoodTypeData);
