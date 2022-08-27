@@ -1,0 +1,24 @@
+<section class="container">
+  <h3 class="potluck-name Hour:" {{format_time potluck.startDateTime}}</h4>
+  <h4>Closing Hour: {{format_time potluck.endDateTime}}</h4>
+  <section class="flex-row justify-center">
+    {{#each potluck.food as |food|}}
+    {{> food-details}}
+    {{/each}}
+  </section>
+</section>
+
+<div class="card">
+  <div class="card-content">
+    <p class="title">
+        
+    </p>
+    <p class="subtitle">
+      {{!-- Jeff Atwood --}}
+    </p>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Add comment</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+</div>
