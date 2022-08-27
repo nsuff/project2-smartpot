@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { FoodType } = require('../../models');
 
 router.get('/', (req, res) => {
+    // console.log(req.params);
     FoodType.findAll()
     .then(dbFoodTypeData => res.json(dbFoodTypeData))
     .catch(err => {
@@ -11,7 +12,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    console.log(req.params);
+    // console.log(req.params);
     FoodType.findOne({    
         where: {
             id: req.params.id
@@ -48,6 +49,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
+    // console.log(req.params);
     FoodType.update(req.body,
       {
         where: {
@@ -69,8 +71,9 @@ router.put('/:id', (req, res) => {
   });
 
 router.delete('/:id', (req, res) => {
-  if (req.session) {req.body,
-    FoodType.destroy({
+    // console.log(req.params);
+  if (req.session) {
+    FoodType.destroy(req.body, {
       where: {
         id: req.params.id
       }
