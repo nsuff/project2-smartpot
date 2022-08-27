@@ -7,8 +7,10 @@ async function newFormHandler(event) {
     const response = await fetch(`/api/potluck`, {
       method: 'POST',
       body: JSON.stringify({
-        title,
-        post_url
+        name,
+        description,
+        startDateTime,
+        endDateTime
       }),
       headers: {
         'Content-Type': 'application/json'
