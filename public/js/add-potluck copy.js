@@ -4,9 +4,10 @@ async function newFormHandler(event) {
     const title = document.querySelector('input[name="post-title"]').value;
     const post_url = document.querySelector('input[name="post-url"]').value;
   
-    const response = await fetch(`/api/post`, {
+    const response = await fetch(`/api/potluck`, {
       method: 'POST',
       body: JSON.stringify({
+        id,
         name,
         description,
         startDateTime,
@@ -18,7 +19,7 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/homepage');
     } else {
       alert(response.statusText);
     }

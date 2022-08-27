@@ -1,4 +1,4 @@
-<!--<section>
+<section>
   <h2>Create New Post</h2>
 
   <form class="new-post-form">
@@ -12,31 +12,24 @@
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
-</section>-->
-
+</section>
 <!--
-{{#each potlucks as |potluck|}}
-{{> potluck-details}}
-{{/each}}
--->
-
-
-<ol class="potluck-list">
-  {{#each potlucks as |potluck|}}
-  <li>
-    {{> potluck-info post }}
-  </li>
-  {{/each}}
-</ol>
-
-<!--
-<p>This is working</p>
-{{#each potlucks as |potluck|}}
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
     <li>
-      {{> potluck-details potluck}}
-      <a href="/homepage/edit/{{potluck.id}}" class="edit-link">Edit post</a>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
+-->
 
 {{#if potluck.length}}
 <section>
@@ -51,4 +44,5 @@
   </ol>
 </section>
 {{/if}}
--->
+
+<script src="/javascript/add-potluck.js"></script>
