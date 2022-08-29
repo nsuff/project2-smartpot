@@ -1,0 +1,27 @@
+<article class="post">
+  <div class="title">
+    {{potluck.name}}
+    <!--<a href="{{post_url}}" target="_blank">{{title}}</a>
+    <span>({{format_url post_url}})</span>-->
+  </div>
+  <div class="meta">
+    Description: {{potluck.description}} 
+    | created by {{user.username}} on {{format_date created_at}}
+    |
+    <a href="/post/{{id}}">{{comments.length}} {{format_word "Details" comments.length}}</a>
+  </div>
+</article>
+
+
+
+<!--
+
+{{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
+
+
+
+
+
+
+
+  -->
