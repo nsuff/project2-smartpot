@@ -1,39 +1,42 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Potluck} = require('../models');
+const { Post, User, Potluck, Comment, Food, FoodType, UserPotluck} = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
   console.log('======================');
-  Post.findAll({
-    // attributes: [
-    //   'id',
+  Potluck.findAll({
+    attributes: [
+     //'id',
+     'name',
+     'description'
     //   'post_url',
     //   'title',
     //   'created_at',
     //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    // ],
+     ],
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
+      //{
+      //  model: Comment,
+      //  attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+      //  include: {
+       //   model: User,
+       //   attributes: ['username']
+       // }
+      //},
       {
         model: User,
         attributes: ['username']
-      },
-      {
-        model: Potluck,
-        attributes: ['name', 'description']
       }
+      //{
+      //  model: Potluck,
+      //  attributes: ['name', 'description']
+      //}
     ]
   })
     .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+      const posts = dbPostData.map(potluck => potluck.get({ plain: true }));
+      console.log(posts);
 
       res.render('homepage', {
         posts,
@@ -60,14 +63,14 @@ router.get('/post/:id', (req, res) => {
     //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     // ],
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+       },
       {
         model: User,
         attributes: ['username']
