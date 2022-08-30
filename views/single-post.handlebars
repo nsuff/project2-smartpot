@@ -1,7 +1,7 @@
 {{> post-info post}}
 
-{{#each foods as |food|}}
-  {{> food-details food}}
+{{#each post.food}}
+  {{>food-details}}
 {{/each}}
 
 {{#if loggedIn}}
@@ -42,7 +42,7 @@
 
 {{/if}}
 
-{{> comments post.comments}}
+{{> comments potluck.comments}}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
