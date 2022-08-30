@@ -1,10 +1,10 @@
 <article class="post">
   <div class="title">
-    {{potluck.name}}
+    {{name}}
   </div>
   <div class="meta">
-    Description: {{potluck.description}} 
-    | created by {{user.username}} on {{format_date created_at}}
+    {{description}} 
+    | hosted by {{user.username}} from {{startDateTime}} to {{endDateTime}}
     |
     <a href="/post/{{id}}">{{comments.length}} {{format_word "Potluck Details" comments.length}}</a>
   </div>
