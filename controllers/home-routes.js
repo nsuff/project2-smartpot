@@ -105,6 +105,7 @@ router.get('/potluck/:id', (req, res) => {
       }
 
       const post = dbPostData.get({ plain: true });
+      console.log(post.food);
 
       res.render('single-post', {
         post,
