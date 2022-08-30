@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   console.log('======================');
   Potluck.findAll({
     attributes: [
-     //'id',
+     'id',
      'name',
      'description',
      'startDateTime',
@@ -52,32 +52,51 @@ router.get('/', (req, res) => {
 });
 
 // get single post
-router.get('/post/:id', (req, res) => {
-  Post.findOne({
+router.get('/potluck/:id', (req, res) => {
+  Potluck.findOne({
     where: {
       id: req.params.id
     },
-    // attributes: [
+    attributes: [
+      'id',
+      'name',
+      'description',
+      'startDateTime',
+      'endDateTime'
     //   'id',
     //   'post_url',
     //   'title',
     //   'created_at',
     //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    // ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-       },
-      {
-        model: User,
-        attributes: ['username']
+     ],
+     include: [
+       {
+        model: Food,
+        attributes: [
+          'id',
+          'potluck_id',
+          'name',
+          'created_at',
+          'type_id',
+          'description'
+        ],
       }
-    ]
+      //   include: {
+      //     model: User,
+      //     attributes: ['username']
+      //   }
+      // },
+    //   model: Comment,
+    //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+    //   include: {
+    //     model: User,
+    //     attributes: ['username']
+    //   }
+    // // //   {
+    // //     model: User,
+    // //     attributes: ['username']
+    // //   }
+      ]
   })
     .then(dbPostData => {
       if (!dbPostData) {
