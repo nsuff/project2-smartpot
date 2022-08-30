@@ -95,6 +95,11 @@ Comment.belongsTo(Post, {
   onDelete: 'SET NULL'
 });
 
+Comment.belongsTo(Potluck, {
+  foreignKey: 'host_id',
+  onDelete: 'SET NULL'
+});
+
 User.hasMany(Comment, {
   foreignKey: 'user_id',
   onDelete: 'SET NULL'

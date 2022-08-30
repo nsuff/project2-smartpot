@@ -5,7 +5,7 @@
 {{/each}}
 
 {{#if loggedIn}}
-<form class="comment-form">
+{{!-- <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
   </div>
@@ -16,9 +16,6 @@
 </form>
 
 
-
-
-
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -27,18 +24,25 @@
   <div>
     <button type="submit">add food</button>
   </div>
-</form>
+</form> --}}
 
 
+<div class="control">
+  <input class="input is-large is-rounded is-primary is-hovered" type="text" placeholder="e.g. This food is delicious">
+</div>
 
+<div class="control">
+  <div class="select is-large is-rounded is-primary is-hovered">
+    <select>
+      <option>Add comment</option>
+      <option>Add food</option>
+    </select>
+  </div>
+</div>
 
-
-
-
-
-
-
-
+<div class="control">
+  <button class="button is-large is-primary is-rounded">Submit</button>
+</div>
 
 {{/if}}
 
