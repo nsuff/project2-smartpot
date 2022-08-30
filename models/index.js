@@ -37,6 +37,14 @@ Potluck.belongsToMany(User, {
   otherKey: 'user_id'
 });
 
+Potluck.belongsTo(User, {
+  foreignKey: 'host_id'
+});
+
+User.hasMany(Potluck, {
+  foreignKey: 'host_id'
+});
+
 // UserPotluck.belongsTo(User, {
 //   foreignKey: 'user_id'
 // });

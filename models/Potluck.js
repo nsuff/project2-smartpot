@@ -26,11 +26,11 @@ Potluck.init(
     endDateTime: {
       type: DataTypes.DATE,
       allowNull: false,
-    }
-    // admin_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    // },
+    },
+    host_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     sequelize,
