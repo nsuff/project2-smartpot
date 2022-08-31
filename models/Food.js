@@ -13,23 +13,21 @@ Food.init(
     },
     potluck_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      defaultValue: 1,
       references: {
         model: 'potluck',
         key: 'id',
       },
     },
     created_at: {
-      type: DataTypes.DATE,
-      allowNull: false,
+      type: DataTypes.DATE
     },
     updated_at: {
-      type: DataTypes.DATE,
-      allowNull: false,
+      type: DataTypes.DATE
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      defaultValue: 1,
       references: {
         model: 'user',
         key: 'id',
@@ -37,7 +35,7 @@ Food.init(
     },
     type_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      defaultValue: 1,
       references: {
         model: 'foodtype',
         key: 'id',
