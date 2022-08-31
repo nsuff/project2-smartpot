@@ -41,10 +41,6 @@ router.get('/', (req, res) => {
         model: User,
         attributes: ['username']
       }
-      //{
-      //  model: Potluck,
-      //  attributes: ['name', 'description']
-      //}
     ]
   })
     .then(dbPostData => {
@@ -74,11 +70,6 @@ router.get('/potluck/:id', (req, res) => {
       'description',
       'startDateTime',
       'endDateTime'
-    //   'id',
-    //   'post_url',
-    //   'title',
-    //   'created_at',
-    //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
      ],
      include: [
        {
