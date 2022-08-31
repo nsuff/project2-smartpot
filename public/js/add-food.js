@@ -22,6 +22,9 @@ const newFoodFormHandler = async (event) => {
       alert('Failed to sign up.');
     }
   }
+
+  
+
 };
 
 
