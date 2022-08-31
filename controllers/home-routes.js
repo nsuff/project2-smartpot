@@ -27,6 +27,17 @@ router.get('/', (req, res) => {
       //  }
       // },
       {
+        model: Post,
+        attributes: [
+          'id',
+          'content',
+          'potluck_id',
+          'user_id',
+          'created_at',
+          'updated_at'
+        ]
+      },
+      {
         model: User,
         attributes: ['username']
       }
@@ -80,6 +91,17 @@ router.get('/potluck/:id', (req, res) => {
           'type_id',
           'description'
         ],
+      },
+      {
+        model: Post,
+        attributes: [
+          'id',
+          'content',
+          'potluck_id',
+          'user_id',
+          'created_at',
+          'updated_at'
+        ]
       }
       //   include: {
       //     model: User,
@@ -105,7 +127,7 @@ router.get('/potluck/:id', (req, res) => {
       }
 
       const post = dbPostData.get({ plain: true });
-      console.log(post.food);
+      console.log(post.posts);
 
       res.render('single-post', {
         post,
