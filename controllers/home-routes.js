@@ -49,7 +49,7 @@ router.get('/', (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(potluck => potluck.get({ plain: true }));
-      console.log(posts);
+      //console.log(posts);
 
       res.render('homepage', {
         posts,
@@ -174,14 +174,14 @@ router.get('/post/:id', (req, res) => {
       //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
       {
         model: User,
         attributes: ['username']
