@@ -38,11 +38,20 @@
   <button type="submit" class="btn">Create</button>
 </form> --}}
 
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
 
+  <div>
+    <button type="submit">add comment</button>
+    <button type="button" class="upvote-btn">upvote</button>
+  </div>
+</form>
 
 <div class="login-card">
   <h2 class="page-title">New Food</h2>
-  <form class="form food-form">
+  <form class="form food-form" id="foodform">
     <div class="form-group">
       <label for="food-name">Name:</label>
       <input class="form-input" type="text" id="food-name" />

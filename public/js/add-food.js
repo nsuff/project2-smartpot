@@ -1,6 +1,7 @@
 
 
 const newFoodFormHandler = async (event) => {
+  console.log('adsfjk;l');
   event.preventDefault();
 
   const name = document.querySelector('#food-name').value.trim();
@@ -29,6 +30,8 @@ const newFoodFormHandler = async (event) => {
 
 
 
-document
-  .querySelector('.food-form')
-  .addEventListener('submit', newFoodFormHandler);
+document.querySelector('.food-form').addEventListener('submit', newFoodFormHandler);
+
+document.getElementById('foodform').addEventListener('submit', newFoodFormHandler);
+//const form = document.getElementById('')
+

@@ -84,21 +84,39 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
-  if (req.session) {
-    Post.create({
-      content: req.body.content,
-      potluck_id: req.body.potluck,
-      user_id: req.session.user_id,
-    })
-      .then(dbPostData => res.json(dbPostData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  }
+
+
+router.post('/',  (req, res) => {
+  Post.create(req.body,{
+    content: req.body.content,
+    potluck_id: req.body.content,
+    user_id: req.body.user_id,
+    created_at: req.body.created_at,
+    updated_at: req.baseUrl.updated_at,
+    //user_id: req.session.user_id
+  })
+    .then(dbPostData => res.json(dbPostData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
+
+// router.post('/', (req, res) => {
+//   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+//   if (req.session) {
+//     Post.create({
+//       content: req.body.content,
+//       potluck_id: req.body.potluck,
+//       user_id: req.session.user_id,
+//     })
+//       .then(dbPostData => res.json(dbPostData))
+//       .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//       });
+//   }
+// });
 
 // router.put('/upvote', (req, res) => {
 //   // custom static method created in models/Post.js
