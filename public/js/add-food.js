@@ -2,15 +2,14 @@
 
 const newFoodFormHandler = async (event) => {
   event.preventDefault();
-  console.log('new food');
 
-  const name = document.querySelector('#username-signup').value.trim();
-  const description = document.querySelector('#email-signup').value.trim();
+  const name = document.querySelector('#food-name').value.trim();
+  const description = document.querySelector('#food-description').value.trim();
   console.log(name);
   console.log(description);
   
 
-  if (username && email) {
+  if (name && description) {
     const response = await fetch('/api/foods', {
       method: 'POST',
       body: JSON.stringify({ name, description }),
