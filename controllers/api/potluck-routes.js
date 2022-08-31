@@ -7,22 +7,16 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
   console.log('======================');
   Potluck.findAll(req.body,{
-    // attributes: [
-    //   'id',
-    //   'post_url',
-    //   'title',
-    //   'created_at',
-    //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    // ],
+    
     include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
+      // {
+      //   model: Comment,
+      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+      //   include: {
+      //     model: User,
+      //     attributes: ['username']
+      //   }
+      // },
       {
         model: User,
         attributes: ['username']
@@ -41,22 +35,16 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    // attributes: [
-    //   'id',
-    //   'post_url',
-    //   'title',
-    //   'created_at',
-    //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    // ],
+
     include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
+      // {
+      //   model: Comment,
+      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+      //   include: {
+      //     model: User,
+      //     attributes: ['username']
+      //   }
+      // },
       {
         model: User,
         attributes: ['username']
@@ -77,14 +65,12 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Potluck.create(req.body,{
     name: req.body.name,
     description: req.body.description,
     startDateTime: req.body.startDateTime,
-    endDateTime: req.body.endDateTime
-    // post_url: req.body.post_url,
-    // user_id: req.session.user_id
+    endDateTime: req.body.endDateTime,
+    host_id: req.session.host_id
   })
     .then(dbPotluckData => res.json(dbPotluckData))
     .catch(err => {

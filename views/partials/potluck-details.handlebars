@@ -1,7 +1,24 @@
-<section class="card">
+{{!-- <section class="card">
   <a href="/potluck/{{id}}">
     <header>{{name}}</header>
+    </a>
     <p>{{description}}</p>
     <!--<img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}">-->
-  </a>
-</section>
+</section> --}}
+
+<div class="card">
+  <div class="card-content">
+    <a href="/potluck/{{id}}">
+    <header class="title">
+        {{ name }}
+    </header>
+    </a>
+    <p class="subtitle">
+     {{description}} 
+    </p>
+  </div>
+  {{!-- <footer class="card-footer">
+    <a href="#" class="card-footer-item">Add comment</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer> --}}
+</div>

@@ -85,7 +85,8 @@ router.post('/', (req, res) => {
         Food.create(req.body, {
             name: req.body.name,
             description: req.body.description,
-            user_id: req.session.user_id
+            //foodtype: '1',
+            //user_id: req.session.user_id
         })
             .then(dbFoodData => res.json(dbFoodData))
             .catch(err => {

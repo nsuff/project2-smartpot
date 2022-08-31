@@ -1,9 +1,10 @@
 :root {
-  --primary: #64B6AC;
-  --secondary: #B09E99;
-  --tertiary: #C0FDFB;
-  --quatrinary: #6c6b67;
-  --light: #e3e4e3;
+  --primary:  #40604F;
+  --secondary: #8FB6BB;
+  --tertiary: #F7BB39;
+  --quatrinary: #757675;
+  --newColor: #8FB6BB;
+  --light: #F4F5F3;
   --dark: #182c23;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
@@ -11,7 +12,7 @@
 
 body {
   font-family: Arial;
-  margin: 0;
+  margin: auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -20,7 +21,7 @@ body {
 }
 
 a {
-  color: var(--dark);
+  color: var(--light);
   text-decoration: none;
 }
 
@@ -55,20 +56,20 @@ nav {
 }
 
 nav a {
-  color: var(--light);
+  color: var(--tertiary);
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
 }
 
 nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
+  color: var(--tertiary);
+  background-color: var(--secondary);
 }
 
 .potluck {
   flex: 4;
-  background-color: #fff;
+  background-color: var(--light);
   padding: 50px;
   display: flex;
   flex-flow: row wrap;
@@ -112,7 +113,7 @@ img {
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--light);
-  color: var(--dark);
+  color: var(--light);
 }
 
 .login-card {
@@ -133,7 +134,7 @@ img {
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
-  background-color: var(--tertiary);
+  background-color: var(--newColor);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
