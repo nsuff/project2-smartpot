@@ -4,6 +4,10 @@
   {{>food-details}}
 {{/each}}
 
+{{#each post.comment}}
+  {{>comments}}
+{{/each}}
+
 {{#if loggedIn}}
 {{!-- <form class="comment-form">
   <div>
