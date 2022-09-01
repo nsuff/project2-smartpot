@@ -10,8 +10,8 @@ async function newFormHandler(event) {
         id,
         name,
         description,
-        startDateTime,
-        endDateTime
+        startDate,
+        endDate
       }),
       headers: {
         'Content-Type': 'application/json'

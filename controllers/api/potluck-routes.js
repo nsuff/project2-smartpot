@@ -7,16 +7,15 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
   console.log('======================');
   Potluck.findAll(req.body,{
-    
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
       {
         model: User,
         attributes: ['username']
@@ -68,8 +67,8 @@ router.post('/', withAuth, (req, res) => {
   Potluck.create(req.body,{
     name: req.body.name,
     description: req.body.description,
-    startDateTime: req.body.startDateTime,
-    endDateTime: req.body.endDateTime,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
     host_id: req.session.host_id
   })
     .then(dbPotluckData => res.json(dbPotluckData))

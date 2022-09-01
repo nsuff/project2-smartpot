@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Potluck, Comment, Food, UserPotluck } = require('../models');
+const { User, Potluck, Comment, Food } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+        attributes: ['id', 'comment_text', 'potluck_id', 'user_id'],
         include: {
           model: User,
           attributes: ['username']
@@ -34,11 +34,11 @@ router.get('/', (req, res) => {
     ]
   })
     .then(dbPotluckData => {
-      const posts = dbPotluckData.map(potluck => potluck.get({ plain: true }));
-      //console.log(posts);
+      const potlucks = dbPotluckData.map(potluck => potluck.get({ plain: true }));
+      console.log(potlucks);
 
       res.render('homepage', {
-        posts,
+        potlucks,
         loggedIn: req.session.loggedIn
       });
     })
@@ -76,7 +76,7 @@ router.get('/potluck/:id', (req, res) => {
       },
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'potluck_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
