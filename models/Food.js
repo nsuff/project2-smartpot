@@ -11,6 +11,22 @@ Food.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      defaultValue: 1,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
     potluck_id: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
@@ -24,30 +40,6 @@ Food.init(
     },
     updated_at: {
       type: DataTypes.DATE
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      defaultValue: 1,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    type_id: {
-      type: DataTypes.INTEGER,
-      defaultValue: 1,
-      references: {
-        model: 'foodtype',
-        key: 'id',
-      },
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
   },
   {

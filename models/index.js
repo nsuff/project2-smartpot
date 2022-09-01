@@ -2,25 +2,15 @@ const User = require('./User');
 const UserPotluck = require('./UserPotluck');
 const Potluck = require('./Potluck');
 const Food = require('./Food');
-const FoodType = require('./FoodType');
-const Post = require('./Post');
 const Comment = require('./Comment');
 
 // create associations
-User.hasMany(Post, {
-  foreignKey: 'user_id'
+User.hasMany(Potluck, {
+  foreignKey: 'host_id'
 });
 
-Post.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-
-Potluck.hasMany(Post, {
-  foreignKey: 'potluck_id'
-});
-
-Post.belongsTo(Potluck, {
-  foreignKey: 'potluck_id'
+Potluck.belongsTo(User, {
+  foreignKey: 'host_id'
 });
 
 User.belongsToMany(Potluck, {
@@ -37,30 +27,6 @@ Potluck.belongsToMany(User, {
   otherKey: 'user_id'
 });
 
-Potluck.belongsTo(User, {
-  foreignKey: 'host_id'
-});
-
-User.hasMany(Potluck, {
-  foreignKey: 'host_id'
-});
-
-// UserPotluck.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
-
-// UserPotluck.belongsTo(Potluck, {
-//   foreignKey: 'potluck_id'
-// });
-
-// User.hasMany(UserPotluck, {
-//   foreignKey: 'user_id'
-// });
-
-// Potluck.hasMany(UserPotluck, {
-//   foreignKey: 'potluck_id'
-// });
-
 User.hasMany(Food, {
   foreignKey: 'user_id'
 });
@@ -74,24 +40,11 @@ Potluck.hasMany(Food, {
 });
 
 Food.belongsTo(Potluck, {
-  foreignKey: 'potluck_id'
-});
-
-FoodType.hasMany(Food, {
-  foreignKey: 'type_id'
-});
-
-Food.belongsTo(FoodType, {
-  foreignKey: 'type_id'
+  foreignKey: 'host_id'
 });
 
 Comment.belongsTo(User, {
   foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});
-
-Comment.belongsTo(Post, {
-  foreignKey: 'post_id',
   onDelete: 'SET NULL'
 });
 
@@ -105,9 +58,11 @@ User.hasMany(Comment, {
   onDelete: 'SET NULL'
 });
 
-Post.hasMany(Comment, {
-  foreignKey: 'post_id'
-});
+Potluck.hasMany(Comment, {
+  foreignKey: 'potluck_id',
+  onDelete: 'SET NULL'
+})
 
 
-module.exports = { User, UserPotluck, Potluck, Post, FoodType, Food, Comment };
+
+module.exports = { User, UserPotluck, Potluck, Food, Comment };

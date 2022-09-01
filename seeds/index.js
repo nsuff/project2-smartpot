@@ -1,8 +1,7 @@
 const seedUsers = require('./user-seeds');
 const seedPotluck = require('./potluck-seeds');
+const seedComments = require('./comment-seeds');
 const seedFood = require('./food-seeds');
-const seedFoodType = require('./foodType-seeds');
-const seedPosts = require('./post-seeds');
 const seedUserPotlock = require('./userPotluck-seeds');
 
 
@@ -18,11 +17,8 @@ const seedAll = async () => {
   await seedPotluck();
   console.log('----------------------');
 
-  await seedFoodType();
-  console.log('----------------------');
-
-  await seedPosts();
-  console.log('----------------------');
+  await seedComments();
+  console.log('--------------');
 
   await seedFood();
   console.log('----------------------');

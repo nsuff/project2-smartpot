@@ -19,11 +19,11 @@ Potluck.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    startDateTime: {
+    startDate: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    endDateTime: {
+    endDate: {
       type: DataTypes.DATE,
       allowNull: false,
     },

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment} = require('../../models');
+const { User, Potluck, Comment} = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -21,23 +21,17 @@ router.get('/:id', (req, res) => {
     },
     include: [
       {
-        model: Post,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+        model: Potluck,
+        attributes: ['id', 'name', 'description', 'created_at', 'host_id']
       },
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'created_at'],
         include: {
-          model: Post,
-          attributes: ['title']
+          model: Potluck,
+          attributes: ['name']
         }
       },
-      {
-        model: Post,
-        attributes: ['title'],
-        through: Vote,
-        as: 'voted_posts'
-      }
     ]
   })
     .then(dbUserData => {
@@ -117,7 +111,6 @@ router.post('/logout', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
