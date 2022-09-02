@@ -75,6 +75,7 @@ nav a:hover {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  height: auto;
 }
 
 .btn-no-style {
@@ -162,4 +163,10 @@ img {
   flex-flow: column wrap;
   align-content: flex-start;
   align-items: center;
+}
+
+.centerall {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

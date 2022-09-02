@@ -1,4 +1,11 @@
-<section>
+<div class="container centerall">
+<div class="columns centerall">
+
+
+
+
+
+<section class="column">
   <h2>Create New Potluck</h2>
 
   <form class="new-potluck-form">
@@ -7,15 +14,71 @@
       <input type="text" id="potluck-title" name="potluck-title" />
     </div>
     <div>
-      <label for="post-url">Link</label>
+      <label for="post-url">Name</label>
       <input id="post-url" name="post-url" />
     </div>
-    <button type="submit" class="btn">Create</button>
+    <button type="submit" class="btn">Potluck</button>
+  </form>
+</section>
+
+<section class="column">
+  <h2>Create New Comment</h2>
+
+  <form class="new-comment-form">
+    <div>
+      <label for="new-comment-text">Comment Text</label>
+      <input type="text" id="new-comment-text" name="new-comment-text" />
+    </div>
+    <button type="submit" class="btn">Comment</button>
+  </form>
+</section>
+
+<section class="column">
+  <h2>Create New Food</h2>
+
+  <form class="new-food-form">
+    <div>
+      <label for="new-food-name">Food Name</label>
+      <input type="text" id="new-food-name" name="new-food-name" />
+    </div>
+    <div>
+      <label for="new-food-description">Food Description</label>
+      <input type="text" id="new-food-description" name="new-food-description" />
+    </div>
+    <button type="submit" class="btn">Food</button>
   </form>
 </section>
 
 
-{{#if potluck.length}}
+
+
+
+
+</div>
+
+<div class="columns centerall">
+
+  <h2 class="columns">Food:</h2>
+  <div class="columns">
+    {{#each potluck.food}}
+      {{>food-details}}
+    {{/each}}
+  </div>
+
+</div>
+
+<div class="columns centerall">
+  <h2 class="columns">Comments:</h2>
+  <div class="columns">
+    {{#each potluck.comments}}
+      {{>comments}}
+    {{/each}}
+  </div>
+</div>
+</div>
+
+
+{{#if potlucks.length}}
 <section>
   <h2>Your Potluck</h2>
   <ol>

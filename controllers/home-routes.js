@@ -77,10 +77,12 @@ router.get('/potluck/:id', (req, res) => {
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'potluck_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ]
       },
       {
         model: User,
@@ -94,11 +96,11 @@ router.get('/potluck/:id', (req, res) => {
         return;
       }
 
-      const potlucks = dbPotluckData.get({ plain: true });
-      console.log(potluck.potlucks);
+      const potluck = dbPotluckData.get({ plain: true });
+      console.log(potluck);
 
-      res.render('homepage', {
-        post,
+      res.render('dashboard', {
+        potluck,
         loggedIn: req.session.loggedIn
       });
     })
