@@ -21,7 +21,7 @@ Food.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      defaultValue: 1,
+      //defaultValue: 1,
       references: {
         model: 'user',
         key: 'id',
@@ -29,7 +29,7 @@ Food.init(
     },
     potluck_id: {
       type: DataTypes.INTEGER,
-      defaultValue: 1,
+      //defaultValue: 1,
       references: {
         model: 'potluck',
         key: 'id',

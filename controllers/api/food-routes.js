@@ -85,6 +85,8 @@ router.post('/', (req, res) => {
         Food.create(req.body, {
             name: req.body.name,
             description: req.body.description,
+            potluck_id: req.body.potluck_id,
+            user_id: req.session.user.id
             //foodtype: '1',
             //user_id: req.session.user_id
         })
