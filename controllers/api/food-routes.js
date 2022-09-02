@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
             'potluck_id',
             'name',
             'created_at',
-            'type_id',
+            'user_id',
             'description'
             [sequelize.literal('(SELECT COUNT(*) FROM food WHERE food.id = food.potluck_id)')]
         ],
@@ -47,7 +47,7 @@ router.get('/:id', (req, res) => {
             'potluck_id',
             'name',
             'created_at',
-            'type_id',
+            'user_id',
             'description'
             [sequelize.literal('(SELECT COUNT(*) FROM food WHERE food.id = food.potluck_id)')]
         ],
