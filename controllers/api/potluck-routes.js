@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Potluck, User} = require('../../models');
+const { Potluck, User, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all users
@@ -73,8 +73,12 @@ router.post('/', withAuth, (req, res) => {
   })
     .then(dbPotluckData => res.json(dbPotluckData))
     .catch(err => {
-      console.log(err);
+      if(err.name === 'SequelizeUniqueConstraintError'){
+        res.status(409).json({message: 'Potluck already exists! '});
+      } else {
+        console.log(err);
       res.status(500).json(err);
+      }
     });
 });
 
