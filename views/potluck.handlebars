@@ -1,27 +1,66 @@
-<section class="container">
-  <h3 class="potluck-name Hour:" {{format_time potluck.startDateTime}}</h4>
-  <h4>Closing Hour: {{format_time potluck.endDateTime}}</h4>
-  <section class="flex-row justify-center">
-    {{#each potluck.food as |food|}}
-    {{> food-details}}
-    {{/each}}
-  </section>
-</section>
-
-<!--
-
-<div class="card">
-  <div class="card-content">
-    <p class="title">
-        
-    </p>
-    <p class="subtitle">
-      {{! Jeff Atwood }}
-    </p>
+<form class="new-potluck-form" <div class="field">
+  <label class="label" for="potluck-title">Title</label>
+  <div class="control">
+    <input class="input" id="potluck-title" name="potluck-title" type="text" placeholder="Text input">
   </div>
-  <footer class="card-footer">
-    <a href="#" class="card-footer-item">Add comment</a>
-    <a href="#" class="card-footer-item">Delete</a>
-  </footer>
-</div>
->>>>>>> develop-->
+  </div>
+
+  {{!-- <div class="field">
+    <label class="label">Start Date</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-success" type="text" placeholder="e.g. 10/31/2022">
+      <span class="icon is-small is-left">
+        <i class="fa fa-calendar"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">End Date</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-exclamation-triangle"></i>
+      </span>
+    </div>
+    <p class="help is-danger">This email is invalid</p>
+  </div> --}}
+
+  <div class="field">
+    <label class="label" for="potluck-description">Description</label>
+    <div class="control">
+      <textarea class="textarea" placeholder="Textarea" id="potluck-description" name="potluck-description"></textarea>
+    </div>
+  </div>
+
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button type="submit" class="button is-link">Create Potluck</button>
+    </div>
+  </div>
+</form>
+
+
+
+{{!-- <section class="column">
+  <h2>Create New Potluck</h2>
+
+  <form class="new-potluck-form">
+    <div>
+      <label for="potluck-title">Title</label>
+      <input type="text" id="potluck-title" name="potluck-title" />
+    </div>
+    <div>
+      <label for="potluck-description">Name</label>
+      <input id="potluck-description" name="potluck-description" />
+    </div>
+    <button type="submit" class="btn">Potluck</button>
+  </form>
+</section> --}}

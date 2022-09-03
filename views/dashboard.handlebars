@@ -3,24 +3,6 @@
 
 
 
-
-
-<section class="column">
-  <h2>Create New Potluck</h2>
-
-  <form class="new-potluck-form">
-    <div>
-      <label for="potluck-title">Title</label>
-      <input type="text" id="potluck-title" name="potluck-title" />
-    </div>
-    <div>
-      <label for="potluck-description">Name</label>
-      <input id="potluck-description" name="potluck-description" />
-    </div>
-    <button type="submit" class="btn">Potluck</button>
-  </form>
-</section>
-
 <section class="column">
   <h2>Create New Comment</h2>
 
@@ -33,20 +15,25 @@
   </form>
 </section>
 
-<section class="column">
+<section class="column box">
   <h2>Create New Food</h2>
+<form class="new-food-form">
+  <div class="control">
+    <label for="new-food-name">Food Name</label>
+    <div class="control">
+      <input class="input" id="new-food-name" type="text" name="new-food-name" placeholder="e.g. pizza">
+    </div>
+  </div>
 
-  <form class="new-food-form">
-    <div>
-      <label for="new-food-name">Food Name</label>
-      <input type="text" id="new-food-name" name="new-food-name" />
+  <div class="field">
+    <label for="new-food-description">Food Description</label>
+    <div class="field">
+      <input class="input" type="text" id="new-food-description" name="new-food-description" placeholder="e.g. Cheese">
     </div>
-    <div>
-      <label for="new-food-description">Food Description</label>
-      <input type="text" id="new-food-description" name="new-food-description" />
-    </div>
-    <button type="submit" class="btn">Food</button>
-  </form>
+  </div>
+
+  <button type="submit" class="button is-info">Food</button>
+</form>
 </section>
 
 
