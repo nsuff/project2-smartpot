@@ -97,7 +97,7 @@ router.get('/potluck/:id', (req, res) => {
       }
 
       const potluck = dbPotluckData.get({ plain: true });
-      console.log(potluck);
+      //console.log(potluck);
 
       res.render('dashboard', {
         potluck,
