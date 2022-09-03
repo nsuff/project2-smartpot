@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Potluck, User} = require('../../models');
+const { Potluck, User, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all users
@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'potluck_id', 'user_id'],
         include: {
           model: User,
           attributes: ['username']
@@ -69,7 +69,7 @@ router.post('/', withAuth, (req, res) => {
     description: req.body.description,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
-    host_id: req.session.host_id
+    host_id: req.session.user_id
   })
     .then(dbPotluckData => res.json(dbPotluckData))
     .catch(err => {
