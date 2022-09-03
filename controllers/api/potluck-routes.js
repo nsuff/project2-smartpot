@@ -63,7 +63,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   Potluck.create(req.body,{
     name: req.body.name,
     description: req.body.description,
