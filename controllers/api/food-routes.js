@@ -86,7 +86,7 @@ router.post('/', (req, res) => {
             name: req.body.name,
             description: req.body.description,
             potluck_id: req.body.potluck_id,
-            user_id: req.session.user.id
+            user_id: req.session.user_id
             //foodtype: '1',
             //user_id: req.session.user_id
         })

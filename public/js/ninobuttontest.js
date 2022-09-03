@@ -17,6 +17,7 @@ const testFunction = async (event) => {
             body: JSON.stringify({ name, description, potluck_id, user_id }),
             headers: { 'Content-Type': 'application/json'},
         });
+        console.log(response);
 
         if (response.ok) {
             document.location.reload();
