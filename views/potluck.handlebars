@@ -1,16 +1,17 @@
-<form class="new-potluck-form" <div class="field">
+<section class="container is-medium">
+<form class="new-potluck-form field">
   <label class="label" for="potluck-title">Title</label>
   <div class="control">
     <input class="input" id="potluck-title" name="potluck-title" type="text" placeholder="Text input">
   </div>
-  </div>
 
-  {{!-- <div class="field">
+
+  <div class="field">
     <label class="label">Start Date</label>
     <div class="control has-icons-left has-icons-right">
       <input class="input is-success" type="text" placeholder="e.g. 10/31/2022">
       <span class="icon is-small is-left">
-        <i class="fa fa-calendar"></i>
+        <i class="fa-solid fa-calendar-day"></i>
       </span>
       <span class="icon is-small is-right">
         <i class="fas fa-check"></i>
@@ -21,21 +22,20 @@
   <div class="field">
     <label class="label">End Date</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+      <input class="input is-danger" type="email" placeholder="e.g. 10/31/2022">
       <span class="icon is-small is-left">
-        <i class="fas fa-envelope"></i>
+        <i class="fa-solid fa-calendar-day"></i>
       </span>
       <span class="icon is-small is-right">
         <i class="fas fa-exclamation-triangle"></i>
       </span>
     </div>
-    <p class="help is-danger">This email is invalid</p>
-  </div> --}}
+  </div>
 
   <div class="field">
     <label class="label" for="potluck-description">Description</label>
     <div class="control">
-      <textarea class="textarea" placeholder="Textarea" id="potluck-description" name="potluck-description"></textarea>
+      <textarea class="textarea" id="potluck-description" name="potluck-description" placeholder="e.g. party starts at 9:00 pm"></textarea>
     </div>
   </div>
 
@@ -46,7 +46,7 @@
     </div>
   </div>
 </form>
-
+</section>
 
 
 {{!-- <section class="column">
@@ -64,3 +64,7 @@
     <button type="submit" class="btn">Potluck</button>
   </form>
 </section> --}}
+
+
+
+<script src="/js/add-potluck.js"></script>
