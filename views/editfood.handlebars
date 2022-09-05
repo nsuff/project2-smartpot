@@ -8,7 +8,27 @@
 <h2> User id: {{food.user.id}}</h2>
 <h2> Username: {{food.user.username}}</h2>
 
-<button type="submit" class="button is-info" id="edit-btn">Edit</button>
+<section class="column box">
+  <h2>Edit Food</h2>
+<form class="edit-food-form">
+  <div class="control">
+    <label for="edit-food-name">Food Name</label>
+    <div class="control">
+      <input class="input" id="edit-food-name" type="text" name="edit-food-name" placeholder="e.g. pizza">
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="edit-food-description">Food Description</label>
+    <div class="field">
+      <input class="input" type="text" id="edit-food-description" name="edit-food-description" placeholder="e.g. Cheese">
+    </div>
+  </div>
+
+  <button type="submit" class="button is-info" id="edit-btn">Edit</button>
+</form>
+</section>
+
 <button type="submit" class="button is-info" id="delete-btn">Delete</button>
 
 <script src="/js/delete-food.js"></script>
