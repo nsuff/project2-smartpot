@@ -5,7 +5,7 @@ const { Food, Post, User, Potluck } = require('../../models');
 // get all users
 router.get('/', (req, res) => {
     console.log('======================');
-    Food.findAll(req.body, {
+    Food.findAll({
         // attributes: [
         //     'id',
         //     'name',
@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Food.findOne(req.body, {
+    Food.findOne({
         where: {
             id: req.params.id
         },
@@ -57,10 +57,6 @@ router.get('/:id', (req, res) => {
             {
                 model: Potluck,
                 attributes: ['id', 'name', 'description'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
             },
             {
                 model: User,
@@ -135,7 +131,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     console.log('id', req.params.id);
-    Food.destroy(req.body, {
+    Food.destroy({
         where: {
             id: req.params.id
         }
