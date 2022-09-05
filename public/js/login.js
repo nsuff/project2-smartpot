@@ -17,6 +17,7 @@ const loginFormHandler = async (event) => {
       alert('Failed to log in.');
     }
   }
+  //alert('this is working');
 };
 
 const signupFormHandler = async (event) => {
@@ -42,9 +43,9 @@ const signupFormHandler = async (event) => {
 };
 
 document
-  .querySelector('.login-input')
-  .addEventListener('submit', loginFormHandler);
+  .getElementById('login-btn')
+  .addEventListener('click', loginFormHandler);
 
 document
-  .querySelector('.signup-input')
-  .addEventListener('submit', signupFormHandler);
+  .getElementById('signup-btn')
+  .addEventListener('click', signupFormHandler);
