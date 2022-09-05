@@ -6,41 +6,45 @@ const Comment = require('./Comment');
 
 // create associations
 User.hasMany(Potluck, {
-  foreignKey: 'host_id'
+  foreignKey: 'potluck_id'
 });
 
 Potluck.belongsTo(User, {
-  foreignKey: 'host_id'
+  foreignKey: 'user_id'
 });
 
 User.belongsToMany(Potluck, {
   through: UserPotluck,
-  as: 'potluck_theme',
+  // as: 'host',
   foreignKey: 'user_id',
-  otherKey: 'potluck_id'
+  //otherKey: 'potluck_id'
 });
 
 Potluck.belongsToMany(User, {
   through: UserPotluck,
-  as: 'potluck_theme',
+  // as: 'host',
   foreignKey: 'potluck_id',
-  otherKey: 'user_id'
+  //otherKey: 'user_id'
 });
 
 User.hasMany(Food, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 Food.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 Potluck.hasMany(Food, {
-  foreignKey: 'potluck_id'
+  foreignKey: 'potluck_id',
+  onDelete: 'SET NULL'
 });
 
 Food.belongsTo(Potluck, {
-  foreignKey: 'host_id'
+  foreignKey: 'potluck_id',
+  onDelete: 'SET NULL'
 });
 
 Comment.belongsTo(User, {
@@ -49,7 +53,7 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Potluck, {
-  foreignKey: 'host_id',
+  foreignKey: 'potluck_id',
   onDelete: 'SET NULL'
 });
 

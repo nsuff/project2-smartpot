@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Potluck,
-        attributes: ['id', 'name', 'description', 'created_at', 'host_id']
+        attributes: ['id', 'name', 'description', 'created_at', 'user_id']
       },
       {
         model: Comment,

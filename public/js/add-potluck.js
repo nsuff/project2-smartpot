@@ -6,7 +6,7 @@ const newPotluckHandler = async (event) => {
   const description = document.querySelector('#potluck-description').value.trim();
   const startDate = '2024-05-04 15:00';
   const endDate = '2024-05-04 18:00';
-  const host_id = 2;
+  const user_id = 2;
 
   // const potluck_id = window.location.toString().split('/')[
   //     window.location.toString().split('/').length - 1
@@ -17,7 +17,7 @@ const newPotluckHandler = async (event) => {
     // alert('this is working');
       const response = await fetch('/api/potluck', {
           method: 'POST',
-          body: JSON.stringify({ name, description, startDate, endDate, host_id }),
+          body: JSON.stringify({ name, description, startDate, endDate, user_id }),
           headers: { 'Content-Type': 'application/json'},
       });
 

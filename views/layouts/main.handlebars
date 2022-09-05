@@ -5,33 +5,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartPot</title>
+  
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style3.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <script src="https://kit.fontawesome.com/b84eaba2a9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header>
-    <h1>SmartPot</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <a href="/views/potluck">Potluck</a>
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <main>
-    <div class="potluck">
-      {{{body}}}
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="/"><img src="../images/potluck.png" alt="SmartPot" /></a>
+      <a href="/">Home</a>
+      {{#if loggedIn}}
+      <a href="/views/potluck">Potluck</a>
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
     </div>
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+
+    <main>
+      <div class="potluck">
+        {{{body}}}
+      </div>
+    </main>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+    <div class="footer">
+      <p>copyright info</p>
+    </div>
+  </div>
 </body>
 
 </html>

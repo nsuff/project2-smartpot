@@ -1,0 +1,156 @@
+:root {
+    --primary: #40604F;
+    --secondary: #8FB6BB;
+    --tertiary: #F7BB39;
+    --quatrinary: #757675;
+    --newColor: #8FB6BB;
+    --light: #F4F5F3;
+    --dark: #182c23;
+    --error: rgb(228, 46, 1);
+
+}
+
+body {
+    margin: 0px;
+    background: #8FB6BB;
+}
+
+.nav {
+    background: var(--tertiary);
+    border-bottom: 1px solid #EFEFEF;
+    height: 100px;
+}
+.nav a {
+   background-color: var(#8FB6BB); 
+}
+
+.nav .logo {
+    margin-top: 0px;
+}
+
+.nav .logo img {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    width: 137px;
+    height: 137px;
+    position: absolute;
+    left: 50%;
+    top: 90px;
+    transform: translate(-50%, -50%);
+}
+
+.nav .logo img:last-child {
+    margin-right: 0;
+}
+
+.post {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background: #F4F5F3;
+    padding: 1% 0;
+}
+
+.post::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+
+.post .section {
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 5%;
+}
+
+.post h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #423B35;
+    text-align: left;
+    font-size: 36px;
+}
+
+.post h1::first-letter {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.post p {
+    outline-offset: 110px;
+    text-align-last: center;
+    font-family: open sans;
+    font-weight: 400;
+    margin: 5% auto;
+}
+
+.post .readmore {
+    text-decoration-color: #DFCCAE;
+    text-decoration: overline;
+    color: #423B35;
+    display: block;
+    float: right;
+    font-family: 'Playfair Display', serif;
+    border-bottom: 2px inset #423B35;
+}
+
+.post .readmore:hover {
+    color: #F4821C;
+}
+
+.post_header {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    background: #f4f4f4;
+    padding: 1%;
+    font-family: open sans light;
+}
+
+.post_header::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.post_header span {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    text-align: center;
+    color: #423B35;
+    text-decoration: none;
+}
+
+.post_header span:last-child {
+    margin-right: 0;
+}
+
+.post_header .share {
+    background-image: url(../images/icons/share.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+}
+
+.footer {
+    font-family: 'Playfair Display', serif;
+    margin: 100px;
+    text-align: center;
+}
+
+
+.logo_icon {
+    background: var(--tertiary);
+    border-radius: 50%;
+    padding: 50px;
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+}

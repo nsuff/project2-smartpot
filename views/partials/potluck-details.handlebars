@@ -1,12 +1,22 @@
-<div class="card">
+{{!-- <div class="card">
   <div class="card-content">
     <a href="/potluck/{{id}}">
-    <header class="title">
+      <header class="title">
         {{ name }}
-    </header>
+      </header>
     </a>
     <p class="subtitle">
-     {{description}} 
+      {{description}}
     </p>
   </div>
-</div>
+</div> --}}
+
+  <div class="posts">
+    <div class="post">
+      <div class="section">
+        <h1> {{ name }} </h1> 
+        <p>{{description}}</p>
+        <a href="/potluck/{{id}}" class="readmore">Details</a>
+      </div>
+    </div>
+  </div>

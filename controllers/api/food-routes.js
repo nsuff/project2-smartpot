@@ -6,19 +6,20 @@ const { Food, Post, User, Potluck } = require('../../models');
 router.get('/', (req, res) => {
     console.log('======================');
     Food.findAll(req.body, {
-        attributes: [
-            'id',
-            'potluck_id',
-            'name',
-            'created_at',
-            'user_id',
-            'description'
-            [sequelize.literal('(SELECT COUNT(*) FROM food WHERE food.id = food.potluck_id)')]
-        ],
+        // attributes: [
+        //     'id',
+        //     'name',
+        //     'description',
+        //     'user_id',
+        //     'potluck_id',
+        //     // 'created_at',
+        //     // 'updated_at'
+        //     // [sequelize.literal('(SELECT COUNT(*) FROM food WHERE food.id = food.potluck_id)')]
+        // ],
         include: [
             {
                 model: Potluck,
-                attributes: ['id', 'name', 'description', 'schedule_date'],
+                attributes: ['id', 'name', 'description'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -42,19 +43,20 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: [
-            'id',
-            'potluck_id',
-            'name',
-            'created_at',
-            'user_id',
-            'description'
-            [sequelize.literal('(SELECT COUNT(*) FROM food WHERE food.id = food.potluck_id)')]
-        ],
+        // attributes: [
+        //     'id',
+        //     'name',
+        //     'description',
+        //     'user_id',
+        //     'potluck_id',
+        //     // 'created_at',
+        //     // 'updated_at'
+        //     // [sequelize.literal('(SELECT COUNT(*) FROM food WHERE food.id = food.potluck_id)')]
+        // ],
         include: [
             {
                 model: Potluck,
-                attributes: ['id', 'name', 'description', 'schedule_date'],
+                attributes: ['id', 'name', 'description'],
                 include: {
                     model: User,
                     attributes: ['username']

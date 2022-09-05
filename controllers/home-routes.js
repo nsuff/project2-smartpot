@@ -12,11 +12,7 @@ router.get('/', (req, res) => {
       'description',
       'startDate',
       'endDate',
-      'host_id'
-      //   'post_url',
-      //   'title',
-      //   'created_at',
-      //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'user_id'
     ],
     include: [
       {
@@ -60,7 +56,7 @@ router.get('/potluck/:id', (req, res) => {
       'description',
       'startDate',
       'endDate',
-      'host_id'
+      'user_id'
     ],
     include: [
       {
