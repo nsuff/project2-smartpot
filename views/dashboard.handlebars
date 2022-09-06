@@ -20,27 +20,48 @@
 
 
 
-<section class="column">
-  <h2>Create New Comment</h2>
-  
-  <form class="new-comment-form">
-    <div>
-      <label for="new-comment-text">Comment Text</label>
-      <input type="text" id="new-comment-text" name="new-comment-text" />
-    </div>
-    <button type="submit" class="btn">Comment</button>
-  </form>
-</section>
+      <article class="media">
+    
+        <div class="media-content">
+          <div class="field">
+            <p class="control">
+              <textarea class="textarea" placeholder="Add a comment..."></textarea>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control">
+              <button class="button">Post comment</button>
+            </p>
+          </div>
+        </div>
+      </article>
 
-<section class="column box">
-  <h2>Create New Food</h2>
-<form class="new-food-form">
-  <div class="control">
-    <label for="new-food-name">Food Name</label>
-    <div class="control">
-      <input class="input" id="new-food-name" type="text" name="new-food-name" placeholder="e.g. pizza">
-    </div>
-  </div>
+      <div class="columns is-mobile">
+        <div class="column">
+          <p class="bd-notification is-info">First nested column</p>
+          <div class="columns centerall">
+            {{!-- <section class="column">
+              <h2>Create New Comment</h2>
+
+              <textarea class="new-comment-form">
+        <div>
+          <label for="new-comment-text">Comment Text</label>
+          <input type="text" id="new-comment-text" name="new-comment-text" />
+        </div>
+        <button type="submit" class="btn">Comment</button>
+      </textarea>
+            </section> --}}
+          </div>
+          <div class="column">
+            <section class="column box">
+              <h2>Create New Food</h2>
+              <form class="new-food-form">
+                <div class="control">
+                  <label for="new-food-name">Food Name</label>
+                  <div class="control">
+                    <input class="input" id="new-food-name" type="text" name="new-food-name" placeholder="e.g. pizza">
+                  </div>
+                </div>
 
   <div class="field">
     <label for="new-food-description">Food Description</label>
