@@ -1,6 +1,23 @@
-<div class="container centerall">
-<div class="columns centerall">
-<div id="sessionuser" style="display:none">{{sessionuser}}</div>
+<div class="column">
+  <p class="bd-notification is-info">First column</p>
+  <article class="media">
+    {{!-- <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure> --}}
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>Barbara Middleton</strong>
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit
+          non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
+          <br>
+          <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
+        </p>
+      </div>
+
 
 
 <section class="column">
@@ -37,30 +54,32 @@
 </section>
 
 
-</div>
 
 
 
-<div class="columns centerall">
-
-  <h2 class="columns">Food:</h2>
-  <div class="columns">
-    {{#each potluck.food}}
-      {{>food-details}}
-    {{/each}}
-  </div>
 
 </div>
 
 <div class="columns centerall">
-  <h2 class="columns">Comments:</h2>
-  <div class="columns">
-    {{#each potluck.comments}}
-      {{>comments}}
-    {{/each}}
-  </div>
-</div>
-</div>
+
+                      <h2 class="columns">Food:</h2>
+                      <div class="columns">
+                        {{#each potluck.food}}
+                        {{>food-details}}
+                        {{/each}}
+                      </div>
+
+                    </div>
+
+                    <div class="columns centerall">
+                      <h2 class="columns">Comments:</h2>
+                      <div class="columns">
+                        {{#each potluck.comments}}
+                        {{>comments}}
+                        {{/each}}
+                      </div>
+                    </div>
+                  </div>
 
 
 {{#if potlucks.length}}
@@ -78,5 +97,5 @@
 {{/if}}
 
 
-<script src="/js/add-food.js"></script>
-<script src="/js/add-comment.js"></script>
+    <script src="/js/add-food.js"></script>
+    <script src="/js/add-comment.js"></script>

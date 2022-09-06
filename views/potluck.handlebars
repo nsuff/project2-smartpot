@@ -1,3 +1,5 @@
+
+{{#if loggedIn}}
 <section class="container is-medium">
 <form class="new-potluck-form field">
   <label class="label" for="potluck-title">Title</label>
@@ -22,7 +24,7 @@
   <div class="field">
     <label class="label">End Date</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-danger" type="email" placeholder="e.g. 10/31/2022">
+      <input class="input is-danger" type="text" placeholder="e.g. 10/31/2022">
       <span class="icon is-small is-left">
         <i class="fa-solid fa-calendar-day"></i>
       </span>
@@ -43,27 +45,21 @@
   <div class="field is-grouped">
     <div class="control">
       <button type="submit" class="button is-link">Create Potluck</button>
+      <button type="submit" class="button is-link is-danger">Delete Potluck</button>
     </div>
   </div>
 </form>
 </section>
+{{/if}}
 
+{{#each potluck.comments}}
+      {{>comments}}
+    {{/each}}
+{{!-- {{> comments potluck.comments}} --}}
 
-{{!-- <section class="column">
-  <h2>Create New Potluck</h2>
-
-  <form class="new-potluck-form">
-    <div>
-      <label for="potluck-title">Title</label>
-      <input type="text" id="potluck-title" name="potluck-title" />
-    </div>
-    <div>
-      <label for="potluck-description">Name</label>
-      <input id="potluck-description" name="potluck-description" />
-    </div>
-    <button type="submit" class="btn">Potluck</button>
-  </form>
-</section> --}}
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
 
 
 
