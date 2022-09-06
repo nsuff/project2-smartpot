@@ -24,6 +24,10 @@ body {
 .nav a {
     background-color: var(#8FB6BB);
 }
+nav a:hover {
+    color: var(--tertiary);
+    background-color: var(--secondary);
+  }
 
 .nav .logo {
     margin-top: 0px;
@@ -45,6 +49,16 @@ body {
 .nav .logo img:last-child {
     margin-right: 0;
 }
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 100%;
+    transition: color 0.1s;
+    margin-left: 16px;
+  }
 
 .post {
     max-width: 68em;
