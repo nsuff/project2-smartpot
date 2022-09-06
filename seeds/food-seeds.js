@@ -17,6 +17,14 @@ const fooddata = [
     name: 'Apple Pie',
     description: 'pie'
   },
+  {
+    potluck_id: 2,
+    created_at: 'August 3, 2022 12:30:00',
+    updated_at: 'August 3, 2022 12:30:00',
+    user_id: 5,
+    name: 'Apple Pie',
+    description: 'pie'
+  },
 ];
 
 const seedFood = () => Food.bulkCreate(fooddata);

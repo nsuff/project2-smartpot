@@ -7,8 +7,12 @@ const testFunction = async (event) => {
     const description = document.querySelector('#new-food-description').value.trim();
     const potluck_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
-      ];
-    const user_id = 1;
+    ];
+    
+    const sesh = document.getElementById('sessionuser').innerHTML;
+    //alert(sesh)
+    //const user_id = String(sesh);
+    const user_id = sesh;
 
 
     if (name && description) {
