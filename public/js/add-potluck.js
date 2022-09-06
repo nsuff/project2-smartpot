@@ -4,8 +4,8 @@ const newPotluckHandler = async (event) => {
 
   const name = document.querySelector('#potluck-title').value.trim();
   const description = document.querySelector('#potluck-description').value.trim();
-  const startDate = '2024-05-04 15:00';
-  const endDate = '2024-05-04 18:00';
+  const startDate = document.getElementById('start-date').value.trim();
+  const endDate = document.getElementById('end-date').value.trim();
   const user_id = 2;
 
   // const potluck_id = window.location.toString().split('/')[
