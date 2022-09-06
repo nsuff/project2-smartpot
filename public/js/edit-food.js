@@ -3,11 +3,11 @@ async function deleteFormHandler(event) {
 
     const name = document.querySelector('#edit-food-name').value.trim();
     const description = document.querySelector('#edit-food-description').value.trim();
-
+    const sesh = document.getElementById('sessionuser').innerHTML;
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-
+    //alert(sesh);
     if (1 === 1) {
       
     
