@@ -1,13 +1,15 @@
 
-<h1>Food id: {{food.id}}</h1>
-<h1>Food name: {{food.name}}</h1>
-<h1>Food description: {{food.description}}</h1>
-<h1>Food user_id: {{food.user_id}}</h1>
-<h1>Food potluck_id: {{food.potluck_id}}</h1>
-<div id="sessionuser" style="display:none">{{sessionuser}}</div>
-<h4> Session user_id: {{sessionuser}}</h4>
-<h2> User id: {{food.user.id}}</h2>
-<h2> Username: {{food.user.username}}</h2>
+<h1 style="display:none">Food id: {{food.id}}</h1>
+<h1 style="display:none">Food name: {{food.name}}</h1>
+<h1 style="display:none">Food description: {{food.description}}</h1>
+<h1 style="display:none">Food user_id: {{food.user_id}}</h1>
+<h1 style="display:none">Food potluck_id: {{food.potluck_id}}</h1>
+<div id="fooduser" style="display:block">{{food.user_id}}</div>
+<div id="foodpotluck" style="display:block">{{food.potluck_id}}</div>
+<div id="sessionuser" style="display:block">{{sessionuser}}</div>
+<h4 style="display:none"> Session user_id: {{sessionuser}}</h4>
+<h2 style="display:none"> User id: {{food.user.id}}</h2>
+<h2 style="display:none"> Username: {{food.user.username}}</h2>
 
 <section class="column box">
   <h2>Edit Food</h2>
