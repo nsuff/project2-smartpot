@@ -110,6 +110,7 @@ router.get('/potluck/:id', (req, res) => {
 
 router.get('/views/potluck', (req, res) => {
   res.render('potluck', {
+    sessionuser: req.session.user_id,
     loggedIn: req.session.loggedIn
   });
 });
