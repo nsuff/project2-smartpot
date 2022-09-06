@@ -3,7 +3,7 @@
 const testCommentFunction = async (event) => {
     event.preventDefault();
 
-    const comment_text = document.querySelector('#new-comment-text').value.trim();
+    const comment_text = document.getElementById('new-comment-text').value.trim();
     const potluck_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];
@@ -22,9 +22,9 @@ const testCommentFunction = async (event) => {
         }
     }
 
-    //alert('this is working');
+    // alert(comment_text);
 };
 
 
 
-document.querySelector('.new-comment-form').addEventListener('submit', testCommentFunction);
+document.getElementById('new-comment-btn').addEventListener('click', testCommentFunction);
