@@ -35,6 +35,7 @@ router.get('/', (req, res) => {
 
       res.render('homepage', {
         potlucks,
+        sessionuser: req.session.user_id,
         loggedIn: req.session.loggedIn
       });
     })
@@ -97,6 +98,7 @@ router.get('/potluck/:id', (req, res) => {
 
       res.render('dashboard', {
         potluck,
+        sessionuser: req.session.user_id,
         loggedIn: req.session.loggedIn
       });
     })
