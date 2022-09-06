@@ -20,8 +20,9 @@ body {
     border-bottom: 1px solid #EFEFEF;
     height: 100px;
 }
+
 .nav a {
-   background-color: var(#8FB6BB); 
+    background-color: var(#8FB6BB);
 }
 
 .nav .logo {
@@ -153,4 +154,37 @@ body {
     width: 100px;
     height: 100px;
     font-size: 20px;
+}
+
+/* comments section */
+.date {
+    font-size: 11px
+}
+
+.comment-text {
+    font-size: 12px
+}
+
+.fs-12 {
+    font-size: 12px
+}
+
+.shadow-none {
+    box-shadow: none
+}
+
+.name {
+    color: #007bff
+}
+
+.cursor:hover {
+    color: blue
+}
+
+.cursor {
+    cursor: pointer
+}
+
+.textarea {
+    resize: none
 }
