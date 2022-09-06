@@ -8,7 +8,9 @@ const seedUserPotlock = require('./userPotluck-seeds');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
+  await sequelize.query('SET FOREIGN_KEY_CHECKS = 0');
   await sequelize.sync({ force: true });
+  await sequelize.query('SET FOREIGN_KEY_CHECKS = 1');
   console.log('----------------------');
 
   await seedUsers();
