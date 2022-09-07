@@ -17,14 +17,14 @@ User.belongsToMany(Potluck, {
   through: UserPotluck,
   // as: 'host',
   foreignKey: 'user_id',
-  //otherKey: 'potluck_id'
+  otherKey: 'potluck_id'
 });
 
 Potluck.belongsToMany(User, {
   through: UserPotluck,
   // as: 'host',
   foreignKey: 'potluck_id',
-  //otherKey: 'user_id'
+  otherKey: 'user_id'
 });
 
 User.hasMany(Food, {
