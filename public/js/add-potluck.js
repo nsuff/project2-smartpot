@@ -6,7 +6,7 @@ const newPotluckHandler = async (event) => {
   const name = document.querySelector('#potluck-title').value.trim();
   const description = document.querySelector('#potluck-description').value.trim();
   const startDate = document.getElementById('start-date').value.trim();
-  const endDate = document.getElementById('end-date').value.trim();
+  const endDate = startDate;
   const user_id = sesh;
 
   // const potluck_id = window.location.toString().split('/')[

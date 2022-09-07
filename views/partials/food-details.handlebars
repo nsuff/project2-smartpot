@@ -1,11 +1,15 @@
 <section class="card centerall">
-  
-  <header>{{this.name}}</header>
+  <header><strong>{{this.user.username}}</strong></header>
+  <header><strong>{{this.name}}</strong></header>
 
   <div class="card-body">
     <p>{{this.description}}</p>
   </div>
 
-  <a href="/editfood/{{id}}"><h3 class="edit-food-btn">Edit</h3></a>
+  <footer class="card-footer">
+    
+    <a href="/editfood/{{id}}" class="card-footer-item">Edit or Delete</a>
+    
+  </footer>
 
 </section>

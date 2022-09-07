@@ -1,6 +1,6 @@
 <div id="sessionuser" style="display:none">{{sessionuser}}</div>
 <div class="column">
-  <p class="bd-notification is-info">First column</p>
+  <p class="bd-notification is-info" style="display:none">First column</p>
   <article class="media">
     {{!-- <figure class="media-left">
       <p class="image is-64x64">
@@ -16,7 +16,7 @@
           <br>
           {{potluck.description}}
           <br>
-          <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
+          <small style="display:none"><a>Like</a> · <a>Reply</a> · 3 hrs</small>
         </p>
       </div>
 
@@ -40,7 +40,7 @@
 
       <div class="columns is-mobile">
         <div class="column">
-          <p class="bd-notification is-info">First nested column</p>
+          <p class="bd-notification is-info" style="display:none">First nested column</p>
           <div class="columns centerall">
             {{!-- <section class="column">
               <h2>Create New Comment</h2>
@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="column">
-          <p class="bd-notification is-info">Second nested column</p>
+          <p class="bd-notification is-info" style="display:none">Second nested column</p>
           <div class="columns">
             <div class="column is-half">
               {{#each potluck.food}}
@@ -90,11 +90,6 @@
                     {{>food-details}}
 
                   </div>
-                  <footer class="card-footer">
-                    <a href="#" class="card-footer-item">Save</a>
-                    <a href="#" class="card-footer-item">Edit</a>
-                    <a href="#" class="card-footer-item">Delete</a>
-                  </footer>
                 </div>
                 {{/each}}
 
@@ -184,7 +179,7 @@
                   <i class="fas fa-heart" aria-hidden="true"></i>
                 </span>
               </a>
-              <a class="level-item" aria-label="delete">
+              <a class="level-item" aria-label="delete" href="/deletecomment/{{this.id}}">
                 <span class="icon is-small">
               <i id="trash" class="fa-solid fa-trash"></i>
               </span>

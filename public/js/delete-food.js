@@ -19,7 +19,7 @@ async function deleteFormHandler(event) {
 
       //alert('this is working')
     } else if (sesh != food_user) {
-      alert('You cannot edit a food you did not make!')
+      alert('You cannot delete a food you did not make!')
     }
   
     if (response.ok) {

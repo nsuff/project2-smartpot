@@ -1,0 +1,18 @@
+<div id="comment-id" style="display:none">{{comment.id}}</div>
+<div id="comment-user" style="display:none">{{comment.user_id}}</div>
+<div id="comment-text" style="display:none">{{comment.comment_text}}</div>
+<div id="potluck-id" style="display:none">{{comment.potluck.id}}</div>
+<div id="sessionuser" style="display:none">{{sessionuser}}</div>
+
+<div class="card mx-4 mt-6 mb-4">
+    <br>
+    {{comment.comment_text}}
+    </br>
+</div>
+<br>
+    Are you sure you want to remove this comment?
+</br>
+
+<button id="delete-btn" class="button is-link is-danger">Delete Comment</button>
+
+<script src="/js/delete-comment.js"></script>
