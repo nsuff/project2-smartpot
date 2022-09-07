@@ -1,7 +1,7 @@
 {
   "name": "smart-pot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create an application called Smart Pot that can be used to write and post notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/kea6t/project2/issues"
   },
-  "homepage": "https://github.com/kea6t/project2#readme"
+  "homepage": "https://github.com/kea6t/project2#readme",
+  "devDependencies": {}
 }
