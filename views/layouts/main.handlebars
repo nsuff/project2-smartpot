@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartPot</title>
-  
+
   <link rel="stylesheet" type="text/css" href="/css/jass2.css">
   <link rel="stylesheet" type="text/css" href="/css/style3.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -13,8 +13,33 @@
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="nav">
+ <div class="wrap">
+    <nav class="navbar is-warning">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/"><img class="potluck" src="../images/potluck.png" alt="SmartPot" /></a>
+    </div>
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">
+            Home
+          </a>
+        </div>
+    {{#if loggedIn}}
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="/views/potluck">
+                Potluck
+            </a>
+            <button id="logout" class="btn-no-style">Logout</button>
+            {{else}}
+            <a class="navbar-item" href="/login">
+                Login
+            </a>
+            {{/if}}
+        </div>
+    </div>
+</nav>
+    {{!-- <div class="nav">
       <a class="logo" href="/"><img src="../images/potluck.png" alt="SmartPot" /></a>
       <a href="/">Home</a>
       {{#if loggedIn}}
@@ -23,7 +48,7 @@
       {{else}}
       <a href="/login">Login</a>
       {{/if}}
-    </div>
+    </div> --}}
 
     <main>
       <div class="potluck">
@@ -34,10 +59,16 @@
     <script src="/js/logout.js"></script>
     {{/if}}
 
-    <div class="footer">
-      <p>copyright info</p>
-    </div>
   </div>
+  <br />
+  <footer>
+    <h2>This was generated with ❤️ made by <i class="fa-brands fa-github-alt"></i> Kenny and <i
+        class="fa-brands fa-github"></i> Nino 🔥🌌🌳🦝</h2>
+    <div>
+
+      &copy; 2022 Smart Pot, Inc.
+    </div>
+  </footer>
 </body>
 
 </html>
