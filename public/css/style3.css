@@ -15,10 +15,11 @@ body {
     background: #8FB6BB;
 }
 
-.nav {
-    background: var(--tertiary);
+.navbar-brand {
+    /* background: var(--tertiary); */
     border-bottom: 1px solid #EFEFEF;
     height: 100px;
+    
 }
 
 .nav a {
@@ -46,9 +47,78 @@ nav a:hover {
     transform: translate(-50%, -50%);
 }
 
+
 .nav .logo img:last-child {
     margin-right: 0;
 }
+
+.navMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .navMenu a {
+    color: #f6f4e6;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    width: 80px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navMenu a:hover {
+    color: #fddb3a;
+  }
+  
+  .navMenu .dot {
+    width: 6px;
+    height: 6px;
+    background: #fddb3a;
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navMenu a:nth-child(1):hover ~ .dot {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .navMenu a:nth-child(2):hover ~ .dot {
+    -webkit-transform: translateX(110px);
+    transform: translateX(110px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .navMenu a:nth-child(3):hover ~ .dot {
+    -webkit-transform: translateX(200px);
+    transform: translateX(200px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .navMenu a:nth-child(4):hover ~ .dot {
+    -webkit-transform: translateX(285px);
+    transform: translateX(285px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
 .btn-no-style {
     background: none;
     border: none;
@@ -57,7 +127,10 @@ nav a:hover {
     text-decoration: none;
     font-size: 100%;
     transition: color 0.1s;
-    margin-left: 16px;
+    margin-right: 20px;
+  }
+  .btn-no-style a:hover {
+    color: #fddb3a;
   }
 
 .post {
@@ -88,7 +161,7 @@ nav a:hover {
     font-weight: 400;
     color: #423B35;
     text-align: left;
-    font-size: 36px;
+    font-size: 20px;
 }
 
 .post h1::first-letter {
