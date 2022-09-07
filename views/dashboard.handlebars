@@ -179,7 +179,7 @@
                   <i class="fas fa-heart" aria-hidden="true"></i>
                 </span>
               </a>
-              <a class="level-item" aria-label="delete">
+              <a class="level-item" aria-label="delete" href="/deletecomment/{{this.id}}">
                 <span class="icon is-small">
               <i id="trash" class="fa-solid fa-trash"></i>
               </span>
@@ -189,6 +189,7 @@
         </div>
       </article>
     </div>
+    <h1>{{this.id}}</h1>
     {{/each}}
 
     <script src="/js/add-food.js"></script>

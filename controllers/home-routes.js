@@ -161,6 +161,45 @@ router.get('/editfood/:id', (req, res) => {
     });
 });
 
+router.get('/deletecomment/:id', (req, res) => {
+  Comment.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'comment_text',
+      'user_id',
+      'potluck_id'
+    ],
+    include: [
+      {
+        model: Potluck,
+        attributes: ['id']
+      }
+    ]
+  })
+    .then(dbCommentData => {
+      if (!dbCommentData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+
+      const comment = dbCommentData.get({ plain: true });
+      console.log(comment);
+
+      res.render('deletecomment', {
+        comment,
+        sessionuser: req.session.user_id,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
